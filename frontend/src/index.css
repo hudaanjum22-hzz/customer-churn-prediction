@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+:root {
+  --color-canvas: #0B1120;
+  --color-glass: rgba(30, 41, 59, 0.5);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+  --color-primary: #6366F1;
+  --color-secondary: #06B6D4;
+  --color-warning: #F59E0B;
+  --color-critical: #F43F5E;
+}
+
+body {
+  background-color: var(--color-canvas);
+  font-family: 'Inter', sans-serif;
+  color: white;
+  min-height: 100vh;
+}
+
+.bg-mesh {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(600px circle at 10% 10%, rgba(99, 102, 241, 0.10), transparent 60%),
+    radial-gradient(700px circle at 90% 80%, rgba(6, 182, 212, 0.08), transparent 60%);
+}
+
+.glass-panel {
+  background: var(--color-glass);
+  backdrop-filter: blur(24px);
+  border: 1px solid var(--color-glass-border);
+  border-radius: 1.1rem;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 8px 24px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.glass-panel:hover {
+  border-color: rgba(99, 102, 241, 0.28);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 8px 28px rgba(0, 0, 0, 0.4),
+    0 0 28px rgba(99, 102, 241, 0.12);
+}
+
+.font-mono-data {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.eyebrow {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #64748B;
+  font-weight: 600;
+}
+
+.glow-indigo {
+  box-shadow: 0 0 16px rgba(99, 102, 241, 0.5);
+}
+
+.icon-chip {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+  transition: box-shadow 0.25s ease, transform 0.15s ease, filter 0.2s ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+  box-shadow: 0 0 24px rgba(99, 102, 241, 0.5);
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.input-field {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: rgba(99, 102, 241, 0.6);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 10px rgba(244, 63, 94, 0.4); }
+  50% { box-shadow: 0 0 26px rgba(244, 63, 94, 0.75); }
+}
+
+.pulse-critical {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Hide default number input spinners for a cleaner look */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@keyframes fade-scale-in {
+  from { opacity: 0; transform: scale(0.95) translateY(8px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.result-enter {
+  animation: fade-scale-in 0.4s ease-out;
+}
