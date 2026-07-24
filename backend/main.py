@@ -13,7 +13,7 @@ app = FastAPI(title="Churn Prediction API")
 # Allow the Vite frontend (localhost:5173) to call this API
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:5174"],
+    allow_origins=["http://localhost:5173", "https://customer-churn-prediction-rho-brown.vercel.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
