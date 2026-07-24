@@ -9,7 +9,7 @@ export default function Overview() {
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/analytics')
+fetch('https://customer-churn-prediction-sub.onrender.com/api/analytics')
       .then((res) => res.json())
       .then(setData)
       .catch((err) => setError(err.message))
