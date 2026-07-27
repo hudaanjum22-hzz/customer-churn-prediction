@@ -10,7 +10,7 @@ export default function App() {
   return (
     <div className="relative flex min-h-screen bg-slate-950">
       <div className="bg-mesh" />
-      <div className="relative z-10 flex w-full">
+      <div className="relative z-10 flex flex-col md:flex-row w-full">
         <Sidebar activeView={activeView} setActiveView={setActiveView} />
         <main className="flex-1 p-8 overflow-y-auto">
           {activeView === 'overview' && <Overview />}
