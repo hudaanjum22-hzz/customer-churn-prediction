@@ -11,4 +11,4 @@ This dashboard lets a user:
 - View a history of past predictions
 - Sign up / log in to access the prediction feature (auth-gated action)
 
-## Architecture
+
