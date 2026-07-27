@@ -41,14 +41,13 @@ fetch('https://customer-churn-prediction-sub.onrender.com/api/analytics')
         <h2 className="text-3xl font-bold tracking-tight">Your customer base, at a glance</h2>
         <p className="text-slate-400 text-sm mt-2">Live metrics pulled straight from your churn model and dataset.</p>
       </div>
-
-      <div className="grid grid-cols-3 gap-4 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
         <KPIWidget label="Total Customers" value={data.kpis.total_customers.toLocaleString()} color="indigo" icon={Users} />
         <KPIWidget label="Average Churn Rate" value={`${data.kpis.churn_rate}%`} color="rose" icon={TrendingDown} />
         <KPIWidget label="Avg Customer Satisfaction" value={`${data.kpis.avg_satisfaction}/10`} color="cyan" icon={Smile} />
       </div>
 
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
         <ChartCard title="Churn Distribution" icon={Grid3x3} color="indigo">
           <ResponsiveContainer width="100%" height={250}>
             <PieChart>
