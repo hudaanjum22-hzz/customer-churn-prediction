@@ -79,7 +79,7 @@ export default function Predictor() {
     }
 
     try {
-      const res = await fetch('https://customer-churn-prediction-sub.onrender.com', {
+        const res = await fetch('https://customer-churn-prediction-sub.onrender.com/api/predict', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
