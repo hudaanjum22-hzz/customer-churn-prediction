@@ -126,7 +126,7 @@ export default function Predictor() {
         <p className="text-slate-400 text-sm mt-2">Enter their profile and we'll assess the churn risk instantly.</p>
       </div>
 
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <form onSubmit={handleSubmit} className="glass-panel p-7 space-y-5">
           <Field label="Age" name="age" value={form.age} onChange={handleChange} error={errors.age} type="number" />
 
